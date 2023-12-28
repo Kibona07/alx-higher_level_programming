@@ -1,10 +1,12 @@
 #!/usr/bin/python3
-for n in range(1,101):
-    if n % 3 ==0 and n % 5 == 0:
-        print('FizzBuzz',end=' ')
-    elif n % 3 == 0:
-        print('Fizz',end=' ')
-    elif n % 5 == 0:
-        print('Buzz',end=' ')
-    else:
-        print(n,end=' ')
+def fizzbuzz():
+    for nummber in range(1, 101):
+        if number % 5 == 0 and number % 3 == 0:
+            print('FizzBuzz', end='')
+        elif number % 5 == 0:
+            print('Buzz', end='')
+        elif number % 3 == 0:
+            print('Fizz', end='')
+        else:
+            print(number, end='')
+
