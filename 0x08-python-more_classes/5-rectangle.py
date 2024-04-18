@@ -1,16 +1,14 @@
 #!/usr/bin/python3
-"""A Class with private instance attributes and public methods"""
+"""A Rectangle Class with the private instance attributes width, height
+    public methods and special methods
+"""
 
 
 class Rectangle():
-    """
-    A Rectangle Class with the private instance attributes width and height
-    """
+    """Defines Class Rectangle"""
 
     def __init__(self, width=0, height=0):
-        """
-        Constructor of the class Rectangle
-          Args:
+        """Constructor of the class Rectangle
             - width (default = 0): int
             - heigth (default = 0): int
         """
@@ -29,16 +27,22 @@ class Rectangle():
         return (self.__width * 2) + (self.__height * 2)
 
     def __str__(self):
-        """
-        Function to print a Square with #
-        """
+        """Function to print a Square with #"""
 
         if self.__width == 0 or self.__height == 0:
             return ""
 
-        final = ['#' * self.__width for line in range(self.__height)]
+        final = [character * self.__width for character in '#' * self.__height]
 
         return '\n'.join(final)
+
+    def __repr__(self):
+        """Returns an “official” string representation of a Rectangle"""
+        return f'Rectangle({self.__width}, {self.__height})'
+
+    def __del__(self):
+        """Gives farewell to Rectangle instance when deleted"""
+        print('Bye rectangle...')
 
     @property
     def width(self):
@@ -47,9 +51,7 @@ class Rectangle():
 
     @width.setter
     def width(self, value):
-        """
-        Getter of the property value
-          Args:
+        """Getter of the property value
             - value: int
         """
         if not isinstance(value, int):
@@ -67,9 +69,7 @@ class Rectangle():
 
     @height.setter
     def height(self, value):
-        """
-        Getter of the property value
-          Args:
+        """Getter of the property value
             - value: int
         """
         if not isinstance(value, int):
